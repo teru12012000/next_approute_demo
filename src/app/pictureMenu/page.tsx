@@ -12,7 +12,7 @@ const PictureMenu = () => {
             <div>
                 <div>
                     <H1>{ja.pictureMenu.title}</H1>
-                    {apiUrl.map((item: string, index) => (
+                    {apiUrl.map((item: string, index: number) => (
                         <div key={index} className={styles.itemMargin}>
                             <PictureList url={item} />
                         </div>

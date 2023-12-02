@@ -7,6 +7,7 @@ interface props {
 }
 
 const PictureMenu = async (props: props) => {
+    console.log(props.url)
     const data: pictureType[] = await getPicture(props.url)
 
     return (
@@ -15,10 +16,11 @@ const PictureMenu = async (props: props) => {
                 <div key={index} className={styles.itemMargin}>
                     <Image
                         src={item.download_url}
-                        width={640}
-                        height={480}
+                        width={200}
+                        height={120}
                         alt={item.id}
                     />
+
                     <p>
                         {item.id}:{item.author}
                     </p>

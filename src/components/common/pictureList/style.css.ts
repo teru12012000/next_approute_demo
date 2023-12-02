@@ -8,6 +8,8 @@ const styles = {
     }),
     itemMargin: style({
         margin: "5px",
+        width: "100px",
+        height: "80px",
     }),
 }
 
