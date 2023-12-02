@@ -13,11 +13,11 @@ const Header = () => {
         setTransition({
             initial: {
                 x: "-25%",
-                zIndex: 1,
+                zIndex: 0,
             },
             exit: {
                 x: "100%",
-                zIndex: 0,
+                zIndex: 1,
             },
         })
         router.back()
