@@ -15,7 +15,7 @@ const RandomPicture = () => {
         isLoading: pictureLoading,
         error: pictureError,
     } = useSWR(
-        `http://picsum.photos/v2/list?page=${random?.id}&limit=10`,
+        `https://picsum.photos/v2/list?page=${random?.id}&limit=10`,
         getPicture,
     )
 
