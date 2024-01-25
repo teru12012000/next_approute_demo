@@ -1,13 +1,13 @@
 import Image from "next/image"
 import { pictureType } from "@/shared/types/apiType"
-import { getPicture } from "@/util/getApi"
+import { getPicture } from "@/model/getApi"
 import styles from "./style.css"
+
 interface props {
     url: string
 }
 
 const PictureMenu = async (props: props) => {
-    console.log(props.url)
     const data: pictureType[] = await getPicture(props.url)
 
     return (
@@ -20,7 +20,6 @@ const PictureMenu = async (props: props) => {
                         height={120}
                         alt={item.id}
                     />
-
                     <p>
                         {item.id}:{item.author}
                     </p>

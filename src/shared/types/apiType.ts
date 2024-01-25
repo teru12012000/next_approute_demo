@@ -6,3 +6,7 @@ export type pictureType = {
     url: string
     download_url: string
 }
+
+export type randomType = {
+    id: string
+}

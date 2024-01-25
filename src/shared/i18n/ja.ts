@@ -17,6 +17,9 @@ const ja = {
         pictureMenu: "ピクチャーメニュー",
         dummyText: "ダミーテキスト",
     },
+    randomPicture: {
+        title: "ランダム画像",
+    },
 }
 
 export default ja

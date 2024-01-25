@@ -10,4 +10,8 @@ export const routingPage: routingType[] = [
         url: "/dummyText",
         title: ja.routingPage.dummyText,
     },
+    {
+        url: "/randomPicture",
+        title: ja.randomPicture.title,
+    },
 ]
