@@ -10,7 +10,6 @@ import { getRandom } from "@/model/getRandom"
 
 const RandomPicture = () => {
     const { data: random } = useSWR("/api", getRandom)
-    console.log(random)
     const {
         data: pictures,
         isLoading: pictureLoading,
