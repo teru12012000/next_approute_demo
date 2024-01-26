@@ -14,4 +14,8 @@ export const routingPage: routingType[] = [
         url: "/randomPicture",
         title: ja.randomPicture.title,
     },
+    {
+        url: "/pictureMenu2",
+        title: ja.routingPage.picture2,
+    },
 ]

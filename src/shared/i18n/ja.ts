@@ -16,9 +16,13 @@ const ja = {
     routingPage: {
         pictureMenu: "ピクチャーメニュー",
         dummyText: "ダミーテキスト",
+        picture2: "ピクチャーメニュー2",
     },
     randomPicture: {
         title: "ランダム画像",
+    },
+    pictureMenu2: {
+        title: "ピクチャーメニュー2",
     },
 }
 
