@@ -1,9 +1,9 @@
 "use client"
-import ja from "@/shared/i18n/ja"
-import styles from "./style.css"
+
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
 import { TransitionContext } from "@/provider/animation/animationContext"
+import HeaderView from "./view"
 
 const Header = () => {
     const router = useRouter()
@@ -23,13 +23,7 @@ const Header = () => {
         router.back()
     }
 
-    return (
-        <header className={styles.containar}>
-            <button className={styles.buttonStyle} onClick={handleClick}>
-                {ja.header.back}
-            </button>
-        </header>
-    )
+    return <HeaderView onClick={handleClick} />
 }
 
 export default Header
