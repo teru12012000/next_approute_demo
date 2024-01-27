@@ -16,8 +16,8 @@ const PictureMenu = async (props: props) => {
                 <div key={index} className={styles.itemMargin}>
                     <Image
                         src={item.download_url}
-                        width={200}
-                        height={120}
+                        width={320}
+                        height={240}
                         alt={item.id}
                     />
                     <p>
