@@ -2,10 +2,9 @@
 
 import { TransitionContext } from "@/provider/animation/animationContext"
 import { routingType } from "@/shared/types/routing"
-import { Button } from "@chakra-ui/react"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
-import styles from "./style.css"
+import RoutingButtonView from "./view"
 
 interface props {
     routingList: routingType[]
@@ -30,15 +29,10 @@ const RoutingButton = (props: props) => {
     }
 
     return (
-        <>
-            {props.routingList.map((item: routingType, index: number) => (
-                <div key={index} className={styles.buttonMargin}>
-                    <Button onClick={() => handleClick(item.url)}>
-                        {item.title}
-                    </Button>
-                </div>
-            ))}
-        </>
+        <RoutingButtonView
+            routingList={props.routingList}
+            onClick={handleClick}
+        />
     )
 }
 
