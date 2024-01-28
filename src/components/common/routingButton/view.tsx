@@ -1,3 +1,5 @@
+"use client"
+
 import { routingType } from "@/shared/types/routing"
 import { Button } from "@chakra-ui/react"
 import styles from "./style.css"
