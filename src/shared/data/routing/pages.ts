@@ -18,4 +18,8 @@ export const routingPage: routingType[] = [
         url: "/pictureMenu2",
         title: ja.routingPage.picture2,
     },
+    {
+        url: "/dragItems1",
+        title: "ドラッグリスト1",
+    },
 ]
