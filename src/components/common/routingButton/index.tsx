@@ -25,6 +25,7 @@ const RoutingButton = (props: props) => {
                 zIndex: 0,
             },
         })
+
         router.push(url)
     }
 
