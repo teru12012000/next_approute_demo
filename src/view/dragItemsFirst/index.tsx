@@ -13,6 +13,8 @@ import {
     DragEndEvent,
     MouseSensor,
     TouchSensor,
+    UniqueIdentifier,
+    DragOverEvent,
 } from "@dnd-kit/core"
 
 import {
@@ -22,9 +24,12 @@ import {
     verticalListSortingStrategy,
 } from "@dnd-kit/sortable"
 import SortableItem from "./sortableItem"
+import { dragType } from "@/shared/types/dragType"
+import { dragItem } from "@/shared/data/dragItem/dragItem"
 
 const DragItemsFirst = () => {
-    const [items, setItems] = useState<number[]>([1, 2, 3])
+    const [items, setItems] = useState<dragType[]>(dragItem)
+    const [forcus, setForcus] = useState<UniqueIdentifier | null>(null)
     const sensors = useSensors(
         useSensor(MouseSensor),
         useSensor(TouchSensor),
@@ -33,17 +38,28 @@ const DragItemsFirst = () => {
         }),
     )
 
+    const handleDragOver = (e: DragOverEvent) => {
+        const { over } = e
+
+        setForcus(over !== null ? over.id : null)
+    }
+
     const handleDragEnd = (e: DragEndEvent) => {
         const { active, over } = e
 
-        if (active.id !== over?.id) {
-            setItems((items: number[]) => {
-                const oldIndex = items.indexOf(Number(active.id))
-                const newIndex = items.indexOf(over ? Number(over.id) : 0)
+        if (over !== null && active.id !== over.id) {
+            setItems((items: dragType[]) => {
+                const searchActive = (ele: dragType) => ele.id === active.id
+                const searchOver = (ele: dragType) => ele.id === over?.id
+
+                const oldIndex = items.findIndex(searchActive)
+                const newIndex = items.findIndex(searchOver)
 
                 return arrayMove(items, oldIndex, newIndex)
             })
         }
+
+        setForcus(null)
     }
 
     return (
@@ -55,13 +71,18 @@ const DragItemsFirst = () => {
                         sensors={sensors}
                         collisionDetection={closestCenter}
                         onDragEnd={handleDragEnd}
+                        onDragOver={handleDragOver}
                     >
                         <SortableContext
                             items={items}
                             strategy={verticalListSortingStrategy}
                         >
-                            {items.map((item: number, index: number) => (
-                                <SortableItem key={index} id={item} />
+                            {items.map((item: dragType, index: number) => (
+                                <SortableItem
+                                    key={index}
+                                    item={item}
+                                    forcus={forcus}
+                                />
                             ))}
                         </SortableContext>
                     </DndContext>
