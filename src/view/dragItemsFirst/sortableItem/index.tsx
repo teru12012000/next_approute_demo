@@ -15,6 +15,7 @@ const SortableItem = (props: props) => {
     const style = {
         transform: CSS.Transform.toString(transform),
         transition,
+        touchAction: "manipulation",
     }
     return (
         <div

@@ -12,6 +12,7 @@ import {
     useSensors,
     DragEndEvent,
     MouseSensor,
+    TouchSensor,
 } from "@dnd-kit/core"
 
 import {
@@ -26,6 +27,7 @@ const DragItemsFirst = () => {
     const [items, setItems] = useState<number[]>([1, 2, 3])
     const sensors = useSensors(
         useSensor(MouseSensor),
+        useSensor(TouchSensor),
         useSensor(KeyboardSensor, {
             coordinateGetter: sortableKeyboardCoordinates,
         }),
