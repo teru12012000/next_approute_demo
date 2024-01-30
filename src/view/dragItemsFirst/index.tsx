@@ -11,6 +11,7 @@ import {
     useSensor,
     useSensors,
     DragEndEvent,
+    MouseSensor,
 } from "@dnd-kit/core"
 
 import {
@@ -24,7 +25,7 @@ import SortableItem from "./sortableItem"
 const DragItemsFirst = () => {
     const [items, setItems] = useState<number[]>([1, 2, 3])
     const sensors = useSensors(
-        useSensor(PointerSensor),
+        useSensor(MouseSensor),
         useSensor(KeyboardSensor, {
             coordinateGetter: sortableKeyboardCoordinates,
         }),
