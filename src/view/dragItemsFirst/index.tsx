@@ -15,6 +15,8 @@ import {
     TouchSensor,
     UniqueIdentifier,
     DragOverEvent,
+    DragOverlay,
+    DragStartEvent,
 } from "@dnd-kit/core"
 
 import {
@@ -30,6 +32,8 @@ import { dragItem } from "@/shared/data/dragItem/dragItem"
 const DragItemsFirst = () => {
     const [items, setItems] = useState<dragType[]>(dragItem)
     const [forcus, setForcus] = useState<UniqueIdentifier | null>(null)
+    const [actived, setActived] = useState<dragType | null>(null)
+
     const sensors = useSensors(
         useSensor(MouseSensor),
         useSensor(TouchSensor),
@@ -37,6 +41,15 @@ const DragItemsFirst = () => {
             coordinateGetter: sortableKeyboardCoordinates,
         }),
     )
+
+    const handleDragStart = (e: DragStartEvent) => {
+        const { active } = e
+
+        const searchActive = (ele: dragType) => ele.id === active.id
+        const searchIndex = items.findIndex(searchActive)
+
+        setActived(items[searchIndex])
+    }
 
     const handleDragOver = (e: DragOverEvent) => {
         const { over } = e
@@ -60,6 +73,8 @@ const DragItemsFirst = () => {
         }
 
         setForcus(null)
+
+        setActived(null)
     }
 
     return (
@@ -70,6 +85,7 @@ const DragItemsFirst = () => {
                     <DndContext
                         sensors={sensors}
                         collisionDetection={closestCenter}
+                        onDragStart={handleDragStart}
                         onDragEnd={handleDragEnd}
                         onDragOver={handleDragOver}
                     >
@@ -82,9 +98,16 @@ const DragItemsFirst = () => {
                                     key={index}
                                     item={item}
                                     forcus={forcus}
+                                    active={item.id === actived?.id}
                                 />
                             ))}
                         </SortableContext>
+
+                        {actived && (
+                            <DragOverlay>
+                                <SortableItem item={actived} />
+                            </DragOverlay>
+                        )}
                     </DndContext>
                 </div>
             </div>

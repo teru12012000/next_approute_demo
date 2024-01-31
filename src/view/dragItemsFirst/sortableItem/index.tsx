@@ -8,7 +8,8 @@ import { UniqueIdentifier } from "@dnd-kit/core"
 
 interface props {
     item: dragType
-    forcus: UniqueIdentifier | null
+    forcus?: UniqueIdentifier | null
+    active?: boolean
 }
 
 const SortableItem = (props: props) => {
@@ -21,26 +22,30 @@ const SortableItem = (props: props) => {
         isSorting,
     } = useSortable({ id: props.item.id })
 
-    const style = {
-        transform: isSorting ? undefined : CSS.Translate.toString(transform),
-        transition,
-        touchAction: "manipulation",
-    }
-
     return (
         <div>
             <div
                 className={styles.box}
                 ref={setNodeRef}
-                style={style}
+                style={{
+                    border: !props.active ? "1px solid black" : "none",
+                    backgroundColor: props.active ? "silver" : "white",
+                }}
                 {...attributes}
             >
-                <div {...listeners} style={{ fontSize: 18, marginRight: 20 }}>
-                    ≡
-                </div>
-                <div style={{ fontSize: 18, marginRight: 20 }}>
-                    {props.item.content}
-                </div>
+                {!props.active && (
+                    <>
+                        <div
+                            {...listeners}
+                            style={{ fontSize: 32, marginRight: 20 }}
+                        >
+                            ≡
+                        </div>
+                        <div style={{ fontSize: 32, marginRight: 20 }}>
+                            {props.item.content}
+                        </div>
+                    </>
+                )}
             </div>
             <div className={styles.underLineBox}>
                 {props.forcus === props.item.id && (
