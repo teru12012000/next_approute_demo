@@ -24,6 +24,9 @@ const ja = {
     pictureMenu2: {
         title: "ピクチャーメニュー2",
     },
+    dragItems1: {
+        pick: "≡",
+    },
 }
 
 export default ja

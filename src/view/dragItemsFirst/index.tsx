@@ -1,13 +1,8 @@
 "use client"
 
-import Header from "@/components/common/Header"
-import styles from "./style.css"
-import { DragEvent, useState } from "react"
+import { useState } from "react"
 import {
-    DndContext,
-    closestCenter,
     KeyboardSensor,
-    PointerSensor,
     useSensor,
     useSensors,
     DragEndEvent,
@@ -15,19 +10,12 @@ import {
     TouchSensor,
     UniqueIdentifier,
     DragOverEvent,
-    DragOverlay,
     DragStartEvent,
 } from "@dnd-kit/core"
-
-import {
-    arrayMove,
-    SortableContext,
-    sortableKeyboardCoordinates,
-    verticalListSortingStrategy,
-} from "@dnd-kit/sortable"
-import SortableItem from "./sortableItem"
+import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable"
 import { dragType } from "@/shared/types/dragType"
 import { dragItem } from "@/shared/data/dragItem/dragItem"
+import DragItemsFirstView from "./view"
 
 const DragItemsFirst = () => {
     const [items, setItems] = useState<dragType[]>(dragItem)
@@ -78,40 +66,15 @@ const DragItemsFirst = () => {
     }
 
     return (
-        <div className={styles.containar}>
-            <Header />
-            <div className={styles.mainContent}>
-                <div>
-                    <DndContext
-                        sensors={sensors}
-                        collisionDetection={closestCenter}
-                        onDragStart={handleDragStart}
-                        onDragEnd={handleDragEnd}
-                        onDragOver={handleDragOver}
-                    >
-                        <SortableContext
-                            items={items}
-                            strategy={verticalListSortingStrategy}
-                        >
-                            {items.map((item: dragType, index: number) => (
-                                <SortableItem
-                                    key={index}
-                                    item={item}
-                                    forcus={forcus}
-                                    active={item.id === actived?.id}
-                                />
-                            ))}
-                        </SortableContext>
-
-                        {actived && (
-                            <DragOverlay>
-                                <SortableItem item={actived} />
-                            </DragOverlay>
-                        )}
-                    </DndContext>
-                </div>
-            </div>
-        </div>
+        <DragItemsFirstView
+            items={items}
+            sensors={sensors}
+            handleDragStart={handleDragStart}
+            handleDragOver={handleDragOver}
+            handleDragEnd={handleDragEnd}
+            forcus={forcus}
+            actived={actived}
+        />
     )
 }
 

@@ -1,13 +1,4 @@
-import { keyframes, style } from "@vanilla-extract/css"
-
-const pop = keyframes({
-    "0%": {
-        transform: "translate3d(0px, 0px, 0) scale(1)",
-    },
-    "100%": {
-        transform: "translate3d(10px, 10px, 0) scale(1.025)",
-    },
-})
+import { style } from "@vanilla-extract/css"
 
 const styles = {
     box: style({
@@ -27,6 +18,10 @@ const styles = {
     underLine: style({
         width: 360,
         border: "1px solid blue",
+    }),
+    font: style({
+        fontSize: 32,
+        marginRight: 20,
     }),
 }
 
