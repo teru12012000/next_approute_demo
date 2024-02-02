@@ -22,4 +22,8 @@ export const routingPage: routingType[] = [
         url: "/dragItems1",
         title: "ドラッグリスト1",
     },
+    {
+        url: "/dragItems2",
+        title: "ドラッグリスト2",
+    },
 ]
