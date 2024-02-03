@@ -2,8 +2,8 @@ import { style } from "@vanilla-extract/css"
 
 const styles = {
     box: style({
-        width: 200,
-        height: 200,
+        width: 150,
+        height: 150,
         border: "1px solid black",
         borderRadius: 5,
         display: "flex",
@@ -20,7 +20,7 @@ const styles = {
         border: "1px solid blue",
     }),
     font: style({
-        fontSize: 32,
+        fontSize: 20,
         marginRight: 20,
     }),
 }
