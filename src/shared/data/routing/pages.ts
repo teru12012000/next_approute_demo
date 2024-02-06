@@ -26,4 +26,8 @@ export const routingPage: routingType[] = [
         url: "/dragItems2",
         title: "ドラッグリスト2",
     },
+    {
+        url: "/tabMenu",
+        title: "タブメニュー",
+    },
 ]
