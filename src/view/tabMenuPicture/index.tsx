@@ -7,7 +7,7 @@ import { useAPI } from "@/hooks/useAPI"
 const TabMenuPicture = () => {
     const [state, setState] = useState<number>(0)
     const { data, controller } = useAPI(
-        `https://picsum.photos/v2/list?page=${state + 1}&limit=10`,
+        `https://picsum.photos/v2/list?page=${state + 1}&limit=33`,
     )
 
     return (
