@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import ClinentLayout from "../layout/ClientLayout"
+import PopupLayout from "@/layout/popupLayout"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,7 +19,11 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body className={inter.className}>
-                <ClinentLayout>{children}</ClinentLayout>
+                <PopupLayout>
+                    <div>
+                        <ClinentLayout>{children}</ClinentLayout>
+                    </div>
+                </PopupLayout>
             </body>
         </html>
     )

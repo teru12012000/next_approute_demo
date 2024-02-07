@@ -30,4 +30,8 @@ export const routingPage: routingType[] = [
         url: "/tabMenu",
         title: "タブメニュー",
     },
+    /*{
+        url: "/popup",
+        title: "グローバルポップアップ",
+    },*/
 ]

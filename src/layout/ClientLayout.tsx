@@ -2,7 +2,7 @@
 
 import { TransitionContext } from "@/provider/animation/animationContext"
 import Provider from "@/provider/provider"
-import { animationType, transitionType } from "@/shared/types/provider"
+import { animationType } from "@/shared/types/provider"
 import { AnimatePresence, motion } from "framer-motion"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { ElementRef, ReactNode, forwardRef, useContext, useState } from "react"
@@ -50,19 +50,15 @@ const ClinentLayout = (props: props) => {
     })
 
     return (
-        <>
-            <CacheProvider>
-                <ChakraProvider>
-                    <TransitionContext.Provider
-                        value={[transition, setTransition]}
-                    >
-                        <AnimatePresence mode="popLayout" initial={false}>
-                            <Child key={segment}>{props.children}</Child>
-                        </AnimatePresence>
-                    </TransitionContext.Provider>
-                </ChakraProvider>
-            </CacheProvider>
-        </>
+        <CacheProvider>
+            <ChakraProvider>
+                <TransitionContext.Provider value={[transition, setTransition]}>
+                    <AnimatePresence mode="popLayout" initial={false}>
+                        <Child key={segment}>{props.children}</Child>
+                    </AnimatePresence>
+                </TransitionContext.Provider>
+            </ChakraProvider>
+        </CacheProvider>
     )
 }
 
