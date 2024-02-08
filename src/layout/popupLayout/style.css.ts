@@ -1,10 +1,6 @@
 import { style } from "@vanilla-extract/css"
 
 const styles = {
-    containar: style({
-        height: "100vh",
-        width: "100vw",
-    }),
     popupBackground: style({
         height: "100%",
         width: "100%",

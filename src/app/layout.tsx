@@ -19,11 +19,8 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body className={inter.className}>
-                <PopupLayout>
-                    <div>
-                        <ClinentLayout>{children}</ClinentLayout>
-                    </div>
-                </PopupLayout>
+                <PopupLayout />
+                <ClinentLayout>{children}</ClinentLayout>
             </body>
         </html>
     )

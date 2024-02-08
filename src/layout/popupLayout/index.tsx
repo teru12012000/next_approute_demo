@@ -4,14 +4,10 @@ import { ReactNode } from "react"
 import { usePopup } from "@/store/usePopup"
 import PopupLayoutView from "./view"
 
-interface props {
-    children: ReactNode
-}
-
-const PopupLayout = (props: props) => {
+const PopupLayout = () => {
     const { value } = usePopup()
 
-    return <PopupLayoutView data={value} {...props} />
+    return <PopupLayoutView data={value} />
 }
 
 export default PopupLayout

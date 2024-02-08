@@ -5,7 +5,6 @@ import { ReactNode } from "react"
 
 interface props {
     data: popupType
-    children: ReactNode
 }
 
 const PopupLayoutView = (props: props) => {
@@ -22,7 +21,6 @@ const PopupLayoutView = (props: props) => {
                     {props.data.contents}
                 </motion.div>
             )}
-            {props.children}
         </div>
     )
 }
