@@ -9,7 +9,7 @@ interface props {
 
 const PopupLayoutView = (props: props) => {
     return (
-        <div className={styles.containar}>
+        <div>
             {props.data.flag && (
                 <motion.div
                     className={styles.popupBackground}
