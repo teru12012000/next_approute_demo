@@ -1,13 +1,12 @@
 "use client"
 
-import { ReactNode } from "react"
-import { usePopup } from "@/store/usePopup"
+import { usePopup } from "@/hooks/store/usePopup"
 import PopupLayoutView from "./view"
 
 const PopupLayout = () => {
-    const { value } = usePopup()
+    const [state, dispatch] = usePopup()
 
-    return <PopupLayoutView data={value} />
+    return <PopupLayoutView data={state} />
 }
 
 export default PopupLayout

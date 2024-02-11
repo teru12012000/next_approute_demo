@@ -1,25 +1,22 @@
 import { motion } from "framer-motion"
 import styles from "./style.css"
-import { popupType } from "@/shared/types/popupType"
-import { ReactNode } from "react"
+import { popupState } from "@/shared/types/popupReducer"
 
 interface props {
-    data: popupType
+    data: popupState
 }
 
 const PopupLayoutView = (props: props) => {
     return (
         <div>
-            {props.data.flag && (
+            {props.data.state !== null && (
                 <motion.div
                     className={styles.popupBackground}
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.6 }}
-                >
-                    {props.data.contents}
-                </motion.div>
+                ></motion.div>
             )}
         </div>
     )
