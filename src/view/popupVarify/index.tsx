@@ -39,7 +39,6 @@ const PopupVarify = () => {
         })
 
         setTimeout(() => {
-            console.log(state)
             dispatch(null)
         }, 3000)
 

@@ -42,9 +42,7 @@ const PopupView = (props: props) => {
                     <div>{props.title}</div>
                 </div>
                 {!Array.isArray(props.children) ? (
-                    <div>
-                        <NoArrayChildren>{props.children}</NoArrayChildren>
-                    </div>
+                    <NoArrayChildren>{props.children}</NoArrayChildren>
                 ) : null}
             </motion.div>
         </motion.div>

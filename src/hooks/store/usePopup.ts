@@ -1,3 +1,5 @@
+"use client"
+
 import { PopupContext } from "@/store/popup/popupContext"
 import { useContext } from "react"
 

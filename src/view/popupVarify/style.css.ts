@@ -18,9 +18,12 @@ const styles = {
         marginTop: 50,
     }),
     button: style({
-        backgroundColor: "silver",
-        border: "1px solid silver",
+        backgroundColor: "gray",
+        height: 40,
+        borderRadius: 5,
+        border: "1px solid gray",
         color: "white",
+        boxShadow: "0 1 0 rgba(0,0,0,0.2)",
     }),
 }
 
