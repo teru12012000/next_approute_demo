@@ -1,8 +1,9 @@
 import { popupAction, popupState } from "@/shared/types/popupReducer"
 
-export const popupReducer = (state: popupState, action: popupAction) => {
-    switch (action.popupType) {
-        case "nomal":
+export const popupReducer = (state: popupState, action: popupAction | null) => {
+    switch (action?.popupType) {
+        case "normal":
+            console.log(action)
             return {
                 state: action,
             }

@@ -1,26 +1,17 @@
 "use client"
 
-import { usePopup } from "@/store/usePopup"
 import PopupVarifyView from "./view"
-import Popup1 from "@/components/view/popup1"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
 import { TransitionContext } from "@/provider/animation/animationContext"
+import { usePopup } from "@/hooks/store/usePopup"
 
 const PopupVarify = () => {
     const router = useRouter()
     const [, setTransition] = useContext(TransitionContext)
-    const { setValue } = usePopup()
-
-    const handleClose = () => {
-        setValue({
-            flag: false,
-        })
-    }
+    const [state, dispatch] = usePopup()
 
     const handleOpen = () => {
-        console.log("hofehoge")
-
         setTransition({
             initial: {
                 x: "-25%",
@@ -28,26 +19,29 @@ const PopupVarify = () => {
             },
             exit: {
                 x: "100%",
-                zIndex: 1,
+                zIndex: 0.5,
             },
         })
 
-        setValue({
-            flag: true,
-            contents: (
-                <Popup1 title="確認" onClick={handleClose} buttonValue="閉じる">
-                    <div
-                        style={{
-                            fontSize: 24,
-                            color: "balck",
-                            fontWeight: "bold",
-                        }}
-                    >
-                        登録しました。
-                    </div>
-                </Popup1>
+        dispatch({
+            popupType: "normal",
+            title: "確認",
+            children: (
+                <div
+                    style={{
+                        fontSize: 32,
+                        fontWeight: "bold",
+                    }}
+                >
+                    登録しました。
+                </div>
             ),
         })
+
+        setTimeout(() => {
+            console.log(state)
+            dispatch(null)
+        }, 3000)
 
         router.push("/")
     }

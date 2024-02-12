@@ -1,24 +1,25 @@
-import { motion } from "framer-motion"
-import styles from "./style.css"
+"use client"
+
+import { AnimatePresence } from "framer-motion"
 import { popupState } from "@/shared/types/popupReducer"
+import Popup from "@/components/common/popupComponts/popup"
+import PopupContents from "@/components/common/popupComponts/popupContents"
 
 interface props {
     data: popupState
 }
 
 const PopupLayoutView = (props: props) => {
+    console.log(props.data.state?.children)
+
     return (
-        <div>
-            {props.data.state !== null && (
-                <motion.div
-                    className={styles.popupBackground}
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6 }}
-                ></motion.div>
-            )}
-        </div>
+        <AnimatePresence>
+            {props.data.state && props.data.state.popupType === "normal" ? (
+                <Popup title={props.data.state.title}>
+                    <PopupContents>{props.data.state.children}</PopupContents>
+                </Popup>
+            ) : null}
+        </AnimatePresence>
     )
 }
 

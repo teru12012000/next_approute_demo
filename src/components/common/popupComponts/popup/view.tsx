@@ -12,27 +12,41 @@ interface props {
 }
 
 const PopupView = (props: props) => {
+    console.log(Array.isArray(props.children))
     return (
         <motion.div
-            className={styles.container}
-            initial={{ y: "140%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "140%" }}
+            className={styles.popupBackground}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.333 }}
         >
-            <header className={styles.header} />
-            <div className={styles.title}>
-                {props.icon && (
-                    <picture>
-                        <Image src={props.icon} width={50} height={50} alt="" />
-                    </picture>
-                )}
-                <div>{props.title}</div>
-            </div>
-            {Array.isArray(props.children) ? (
-                <ArrayChildren>{props.children}</ArrayChildren>
-            ) : (
-                <NoArrayChildren>{props.children}</NoArrayChildren>
-            )}
+            <motion.div
+                className={styles.container}
+                initial={{ y: "140%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "140%" }}
+            >
+                <header className={styles.header} />
+                <div className={styles.title}>
+                    {props.icon && (
+                        <picture>
+                            <Image
+                                src={props.icon}
+                                width={50}
+                                height={50}
+                                alt=""
+                            />
+                        </picture>
+                    )}
+                    <div>{props.title}</div>
+                </div>
+                {!Array.isArray(props.children) ? (
+                    <div>
+                        <NoArrayChildren>{props.children}</NoArrayChildren>
+                    </div>
+                ) : null}
+            </motion.div>
         </motion.div>
     )
 }

@@ -1,6 +1,6 @@
 export type transitionType = {
     x: string
-    zIndex: number
+    zIndex?: number
 }
 
 export type animationType = {

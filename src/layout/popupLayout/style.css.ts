@@ -4,7 +4,7 @@ const styles = {
     popupBackground: style({
         height: "100%",
         width: "100%",
-        zIndex: 0.5,
+        zIndex: 2,
         backgroundColor: "rgba(0,0,0,0.2)",
         display: "flex",
         alignItems: "center",

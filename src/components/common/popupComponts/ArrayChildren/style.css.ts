@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css"
 
 const styles = {
     containar: style({
-        height: 450,
+        height: 350,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

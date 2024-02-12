@@ -10,7 +10,7 @@ const initializeState: popupState = {
 }
 
 export const PopupContext = createContext<
-    [popupState, Dispatch<popupAction>] | undefined
+    [popupState, Dispatch<popupAction | null>] | undefined
 >(undefined)
 
 interface props {
@@ -18,10 +18,9 @@ interface props {
 }
 
 const PopupProvider = (props: props) => {
-    const [state, dispatch] = useReducer<Reducer<popupState, popupAction>>(
-        popupReducer,
-        initializeState,
-    )
+    const [state, dispatch] = useReducer<
+        Reducer<popupState, popupAction | null>
+    >(popupReducer, initializeState)
 
     return (
         <PopupContext.Provider value={[state, dispatch]}>

@@ -3,12 +3,13 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import ClinentLayout from "../layout/ClientLayout"
 import PopupLayout from "@/layout/popupLayout"
+import PopupProvider from "@/store/popup/popupContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
     title: "Next.js app router demo colection",
-    description: "",
+    description: "This app is Next.js demo app.",
 }
 
 export default function RootLayout({
@@ -19,7 +20,10 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body className={inter.className}>
-                <ClinentLayout>{children}</ClinentLayout>
+                <PopupProvider>
+                    <PopupLayout />
+                    <ClinentLayout>{children}</ClinentLayout>
+                </PopupProvider>
             </body>
         </html>
     )

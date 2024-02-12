@@ -1,4 +1,6 @@
-export type popupType = "nomal" | "oneButton"
+import { ReactNode } from "react"
+
+export type popupType = "normal" | "oneButton"
 
 export type popupAction = {
     popupType: popupType
@@ -6,6 +8,7 @@ export type popupAction = {
     onClick1?: () => void
     buttonValue1?: string
     color1?: string
+    children: ReactNode
 }
 
 export type popupState = {
