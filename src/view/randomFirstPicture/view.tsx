@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./style.css"
-import Header from "@/components/common/Header"
+import { Header } from "@/components/common/Header/header-logic"
 import { pictureType } from "@/shared/types/apiType"
 import Image from "next/image"
 

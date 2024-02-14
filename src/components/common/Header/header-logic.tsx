@@ -3,9 +3,9 @@
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
 import { TransitionContext } from "@/provider/animation/animationContext"
-import HeaderView from "./view"
+import HeaderView from "./header-view"
 
-const Header = () => {
+export const Header = () => {
     const router = useRouter()
     const [, setTransition] = useContext(TransitionContext)
 
@@ -25,5 +25,3 @@ const Header = () => {
 
     return <HeaderView onClick={handleClick} />
 }
-
-export default Header

@@ -13,7 +13,7 @@ import {
     closestCenter,
 } from "@dnd-kit/core"
 import styles from "./style.css"
-import Header from "@/components/common/Header"
+import { Header } from "@/components/common/Header/header-logic"
 import {
     SortableContext,
     horizontalListSortingStrategy,

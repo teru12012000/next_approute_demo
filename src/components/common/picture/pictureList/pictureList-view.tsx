@@ -1,15 +1,15 @@
-import { pictureType } from "@/shared/types/apiType"
+import { pictureType } from "@/components/common/picture"
 import styles from "./style.css"
 import Image from "next/image"
 
 interface props {
-    data?: pictureType[]
+    data: pictureType[]
 }
 
-const PictureList2View = (props: props) => {
+export const PictureListView = (props: props) => {
     return (
         <div className={styles.containar}>
-            {props.data?.map((item: pictureType, index: number) => (
+            {props.data.map((item: pictureType, index: number) => (
                 <div key={index} className={styles.itemMargin}>
                     <Image
                         src={item.download_url}
@@ -25,5 +25,3 @@ const PictureList2View = (props: props) => {
         </div>
     )
 }
-
-export default PictureList2View

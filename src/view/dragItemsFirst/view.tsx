@@ -11,7 +11,7 @@ import {
 } from "@dnd-kit/core"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import styles from "./style.css"
-import Header from "@/components/common/Header"
+import { Header } from "@/components/common/Header/header-logic"
 import { dragType } from "@/shared/types/dragType"
 import SortableItem from "./sortableItem"
 

@@ -4,7 +4,7 @@ import { ReactNode } from "react"
 import ArrayChildren from "../ArrayChildren"
 import NoArrayChildren from "../noArrayChildren"
 import styles from "./style.css"
-import H1 from "../../H1"
+import { H1 } from "@/components/common/H1"
 
 interface props {
     title: string
@@ -13,7 +13,6 @@ interface props {
 }
 
 const PopupView = (props: props) => {
-    console.log(Array.isArray(props.children))
     return (
         <motion.div
             className={styles.popupBackground}

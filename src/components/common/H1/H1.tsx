@@ -6,11 +6,10 @@ interface props {
     style?: CSSProperties
 }
 
-const H1 = (props: props) => {
+export const H1 = (props: props) => {
     return (
         <h1 className={styles.fontStyle} style={{ ...props.style }}>
             {props.children}
         </h1>
     )
 }
-export default H1

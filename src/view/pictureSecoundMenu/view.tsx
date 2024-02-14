@@ -1,13 +1,11 @@
 "use client"
 
-import H1 from "@/components/common/H1"
-import Header from "@/components/common/Header"
-import { getPromisePicture } from "@/model/promisePicture"
-import { apiUrl } from "@/shared/data/api/apiUrl"
+import { H1 } from "@/components/common/H1"
+import { Header } from "@/components/common/Header/header-logic"
 import ja from "@/shared/i18n/ja"
 import styles from "./style.css"
 import { pictureType } from "@/shared/types/apiType"
-import PictureList2 from "@/components/common/pictureList2"
+import { PictureList2 } from "@/components/common/picture/pictureList2"
 
 interface props {
     data?: pictureType[][]

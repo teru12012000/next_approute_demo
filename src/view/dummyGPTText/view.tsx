@@ -1,7 +1,7 @@
-import H1 from "@/components/common/H1"
+import { H1 } from "@/components/common/H1"
 import styles from "./style.css"
 import ja from "@/shared/i18n/ja"
-import Header from "@/components/common/Header"
+import { Header } from "@/components/common/Header/header-logic"
 
 const DummyGPTTextView = () => {
     return (

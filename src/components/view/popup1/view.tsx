@@ -1,6 +1,6 @@
-import OnePopupButton from "@/components/common/popupComponts/onePopupButton"
-import Popup from "@/components/common/popupComponts/popup"
-import PopupContents from "@/components/common/popupComponts/popupContents"
+import OnePopupButton from "@/components/common/popup/onePopupButton"
+import Popup from "@/components/common/popup/popup"
+import PopupContents from "@/components/common/popup/popupContents"
 import { ReactNode } from "react"
 
 interface props {

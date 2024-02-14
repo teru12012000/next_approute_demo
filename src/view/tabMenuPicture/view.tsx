@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react"
 import styles from "./style.css"
 import Tab from "@/components/common/tab"
-import Header from "@/components/common/Header"
+import { Header } from "@/components/common/Header/header-logic"
 import { pictureType } from "@/shared/types/apiType"
 import Image from "next/image"
 
