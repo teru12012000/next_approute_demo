@@ -17,17 +17,11 @@ const styles = {
         height: 600,
         zIndex: 1,
     }),
-    header: style({
-        width: "100%",
-        height: 10,
-        backgroundColor: "red",
-    }),
     title: style({
         width: 200,
         height: 100,
         display: "flex",
         justifyContent: "space-between",
-        color: "red",
     }),
 }
 
