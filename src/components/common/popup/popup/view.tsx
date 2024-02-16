@@ -23,9 +23,10 @@ const PopupView = (props: props) => {
         >
             <motion.div
                 className={styles.container}
-                initial={{ y: "140%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "140%" }}
+                initial={{ y: "120%" }}
+                animate={{ y: ["120%", "50%", "20%", "10%", "-50%"] }}
+                exit={{ y: "120%" }}
+                transition={{ times: [0, 0.333, 0.9, 1, 1.2] }}
             >
                 <div className={styles.title}>
                     {props.icon && (
