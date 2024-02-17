@@ -1,4 +1,4 @@
-import { getPictures } from "@/model/getApi"
+import { getPictures } from "./getApi"
 import useSWR from "swr"
 
 export const useAPI = (url: string) => {

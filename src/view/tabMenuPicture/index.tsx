@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import TabMenuPictureView from "./view"
-import { useAPI } from "@/hooks/model/useAPI"
+import { useAPI } from "@/model/getApi"
 
 const TabMenuPicture = () => {
     const [state, setState] = useState<number>(0)
