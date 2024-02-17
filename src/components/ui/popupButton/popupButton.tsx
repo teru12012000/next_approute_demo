@@ -8,7 +8,7 @@ interface props {
     background?: string
 }
 
-const PopupButtonView = (props: props) => {
+export const PopupButton = (props: props) => {
     return (
         <div>
             <button
@@ -24,5 +24,3 @@ const PopupButtonView = (props: props) => {
         </div>
     )
 }
-
-export default PopupButtonView

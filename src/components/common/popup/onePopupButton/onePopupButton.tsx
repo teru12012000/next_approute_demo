@@ -1,4 +1,4 @@
-import PopupButton from "@/components/ui/popupButton"
+import { PopupButton } from "@/components/ui/popupButton"
 import styles from "./style.css"
 
 interface props {
