@@ -4,8 +4,6 @@ interface props {
     children: ReactNode
 }
 
-const PopupContentsView = (props: props) => {
+export const PopupContents = (props: props) => {
     return <>{props.children}</>
 }
-
-export default PopupContentsView

@@ -2,11 +2,9 @@ import { ReactNode } from "react"
 import styles from "./style.css"
 
 interface props {
-    children: ReactNode
+    children: ReactNode[]
 }
 
-const NoArrayChildrenView = (props: props) => {
+export const ArrayChildren = (props: props) => {
     return <main className={styles.containar}>{props.children}</main>
 }
-
-export default NoArrayChildrenView

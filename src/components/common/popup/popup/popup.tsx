@@ -1,8 +1,7 @@
 import { motion } from "framer-motion"
 import Image, { StaticImageData } from "next/image"
 import { ReactNode } from "react"
-import ArrayChildren from "../ArrayChildren"
-import NoArrayChildren from "../noArrayChildren"
+import { NoArrayChildren } from "../noArrayChildren/noArrayChildren"
 import styles from "./style.css"
 import { H1 } from "@/components/common/H1"
 
@@ -12,7 +11,7 @@ interface props {
     children: ReactNode | ReactNode[]
 }
 
-const PopupView = (props: props) => {
+export const Popup = (props: props) => {
     return (
         <motion.div
             className={styles.popupBackground}
@@ -48,5 +47,3 @@ const PopupView = (props: props) => {
         </motion.div>
     )
 }
-
-export default PopupView

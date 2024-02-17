@@ -2,8 +2,8 @@
 
 import { AnimatePresence } from "framer-motion"
 import { popupState } from "@/shared/types/popupReducer"
-import Popup from "@/components/common/popup/popup"
-import PopupContents from "@/components/common/popup/popupContents"
+import { Popup } from "@/components/common/popup"
+import { PopupContents } from "@/components/common/popup"
 
 interface props {
     data: popupState

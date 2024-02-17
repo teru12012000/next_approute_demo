@@ -7,12 +7,10 @@ interface props {
     background?: string
 }
 
-const OnePopupButtonView = (props: props) => {
+export const OnePopupButton = (props: props) => {
     return (
         <div className={styles.containar}>
             <PopupButton {...props} />
         </div>
     )
 }
-
-export default OnePopupButtonView
