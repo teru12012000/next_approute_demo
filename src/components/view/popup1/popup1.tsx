@@ -1,7 +1,7 @@
-import { OnePopupButton } from "@/components/common/popup"
-import { Popup } from "@/components/common/popup"
-import { PopupContents } from "@/components/common/popup"
+"use client"
+
 import { ReactNode } from "react"
+import { OnePopupButton, Popup, PopupContents } from "@/components/common/popup"
 
 interface props {
     title: string
@@ -10,7 +10,7 @@ interface props {
     children: ReactNode
 }
 
-const Popup1View = (props: props) => {
+export const Popup1 = (props: props) => {
     return (
         <Popup title={props.title}>
             <PopupContents>{props.children}</PopupContents>
@@ -18,5 +18,3 @@ const Popup1View = (props: props) => {
         </Popup>
     )
 }
-
-export default Popup1View
