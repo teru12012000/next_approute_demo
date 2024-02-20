@@ -4,8 +4,8 @@ import { H1 } from "@/components/common/H1"
 import { Header } from "@/components/common/Header/header-logic"
 import ja from "@/shared/i18n/ja"
 import styles from "./style.css"
-import { pictureType } from "@/shared/types/apiType"
 import { PictureList2 } from "@/components/common/picture/pictureList2"
+import { pictureType } from "@/components/common/picture"
 
 interface props {
     data?: pictureType[][]

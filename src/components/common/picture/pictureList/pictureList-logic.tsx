@@ -1,6 +1,6 @@
-import { pictureType } from "@/shared/types/apiType"
 import { getPicture } from "@/model/getApi"
 import { PictureListView } from "./pictureList-view"
+import { pictureType } from "../type"
 
 interface props {
     url: string

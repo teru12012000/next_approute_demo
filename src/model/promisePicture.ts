@@ -1,4 +1,4 @@
-import { pictureType } from "@/shared/types/apiType"
+import type { pictureType } from "@/components/common/picture"
 
 export const getPromisePicture = async (url: string[]) => {
     const response = await Promise.all(

@@ -2,7 +2,7 @@
 
 import styles from "./style.css"
 import { Header } from "@/components/common/Header/header-logic"
-import { pictureType } from "@/shared/types/apiType"
+import { pictureType } from "@/components/common/picture"
 import Image from "next/image"
 
 interface props {
