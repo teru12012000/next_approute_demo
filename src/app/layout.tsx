@@ -3,7 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import ClinentLayout from "../layout/ClientLayout"
 import PopupLayout from "@/layout/popupLayout"
-import PopupProvider from "@/store/popup/popupContext"
+import { PopupProvider } from "@/store/popup"
 
 const inter = Inter({ subsets: ["latin"] })
 

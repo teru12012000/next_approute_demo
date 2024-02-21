@@ -1,6 +1,6 @@
 "use client"
 
-import { usePopup } from "@/hooks/store/usePopup"
+import { usePopup } from "@/store/popup"
 import PopupLayoutView from "./view"
 
 const PopupLayout = () => {

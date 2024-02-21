@@ -1,7 +1,7 @@
 "use client"
 
-import { TransitionContext } from "@/provider/animation/animationContext"
-import Provider from "@/provider/provider"
+import { TransitionContext } from "@/store/animation/animationContext"
+import Provider from "@/store/animation/provider"
 import { animationType } from "@/shared/types/provider"
 import { AnimatePresence, motion } from "framer-motion"
 import { useSelectedLayoutSegment } from "next/navigation"

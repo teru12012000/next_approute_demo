@@ -1,6 +1,6 @@
 "use client"
 
-import { TransitionContext } from "@/provider/animation/animationContext"
+import { TransitionContext } from "@/store/animation/animationContext"
 import { routingType } from "@/shared/types/routing"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"

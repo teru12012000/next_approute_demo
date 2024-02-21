@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
-import { TransitionContext } from "@/provider/animation/animationContext"
+import { TransitionContext } from "@/store/animation/animationContext"
 import HeaderView from "./header-view"
 
 export const Header = () => {

@@ -3,8 +3,8 @@
 import PopupVarifyView from "./view"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
-import { TransitionContext } from "@/provider/animation/animationContext"
-import { usePopup } from "@/hooks/store/usePopup"
+import { TransitionContext } from "@/store/animation/animationContext"
+import { usePopup } from "@/store/popup"
 
 const PopupVarify = () => {
     const router = useRouter()
