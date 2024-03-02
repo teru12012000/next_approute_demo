@@ -8,7 +8,7 @@ import { PopupProvider } from "@/store/popup"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-    title: "Next.js app router demo colection",
+    title: "Next.js app router demo collection",
     description: "This app is Next.js demo app.",
 }
 
