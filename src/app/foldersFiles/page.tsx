@@ -1,5 +1,7 @@
-const FolderFile = () => {
-    return <div>Enter</div>
+import { FolderFile } from "@/view/folderFile"
+
+const FoldersFiles = () => {
+    return <FolderFile />
 }
 
-export default FolderFile
+export default FoldersFiles
